@@ -12,17 +12,41 @@
         <maven.compiler.source>23</maven.compiler.source>
         <maven.compiler.target>23</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <allure.version>2.29.1</allure.version>
     </properties>
+    <!-- Add allure-bom to dependency management to ensure correct versions of all the dependencies are used -->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-bom</artifactId>
+                <version>${allure.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
 <dependencies>
+    <dependency>
+        <groupId>io.qameta.allure</groupId>
+        <artifactId>allure-cucumber7-jvm</artifactId>
+        <scope>test</scope>
+    </dependency>
+    <dependency>
+        <groupId>io.qameta.allure</groupId>
+        <artifactId>allure-testng</artifactId>
+        <scope>test</scope>
+    </dependency>
     <dependency>
         <groupId>io.cucumber</groupId>
         <artifactId>cucumber-java</artifactId>
-        <version>7.22.0</version>
+        <version>7.22.1</version>
     </dependency>
     <dependency>
         <groupId>io.cucumber</groupId>
         <artifactId>cucumber-testng</artifactId>
-        <version>7.22.0</version>
+        <version>7.22.1</version>
     </dependency>
 
     <dependency>

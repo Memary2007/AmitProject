@@ -9,7 +9,7 @@ import java.time.Duration;
 
 public class Home {
     WebDriver driver;
-    WebDriverWait wait ;
+    WebDriverWait wait;
     private static final By homePageSignUpButton = new By.ById("signin2");
     private static final By signUpUserFiled = new By.ById("sign-username");
     private static final By SignUpPasswordFiled = new By.ById("sign-password");
@@ -18,16 +18,23 @@ public class Home {
     private static final By LogInUserFiled = new By.ById("loginusername");
     private static final By LogInPasswordFiled = new By.ById("loginpassword");
     private static final By LogInButtonClickable = new By.ByCssSelector("Button[onclick='logIn()']");
-    private static final By userProfileLink  = new By.ById("nameofuser");
+    private static final By userProfileLink = new By.ById("nameofuser");
+    private static final By notebookCatgoryLink = new By.ByCssSelector("a[onclick=\"byCat('notebook')\"]");
+    private static final By productOnePage = new By.ByLinkText("Sony vaio i5");
+    private static final By productTwoPage = new By.ByLinkText("Sony vaio i7");
+    private  static  final By cartPageLink =new By.ById("cartur");
+
     public Home(WebDriver driver) {
         this.driver = driver;
-        wait =new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
-//signup Action
-    public void enterUserNameSignUp(String userName){
+    //signup Action
+    public void enterUserNameSignUp(String userName) {
+        wait.until(ExpectedConditions.elementToBeClickable(signUpUserFiled));
         driver.findElement(signUpUserFiled).sendKeys(userName);
     }
+
     public void clickOnHomeSignUpButton() {
         driver.findElement(homePageSignUpButton).click();
     }
@@ -36,16 +43,18 @@ public class Home {
         driver.findElement(SignUpPasswordFiled).sendKeys(password);
     }
 
-    public void clickSignUpButton(){
+    public void clickSignUpButton() {
 
         driver.findElement(SignUpButtonClickable).click();
 
     }
+
     //login Action
-    public void enterUserNameLogIn(String userName){
+    public void enterUserNameLogIn(String userName) {
         wait.until(ExpectedConditions.elementToBeClickable(LogInUserFiled));
         driver.findElement(LogInUserFiled).sendKeys(userName);
     }
+
     public void clickOnHomeLogInButton() {
         driver.findElement(homePageLogInButton).click();
     }
@@ -54,16 +63,32 @@ public class Home {
         driver.findElement(LogInPasswordFiled).sendKeys(password);
     }
 
-    public void clickLoginButton(){
+    public void clickLoginButton() {
 
         driver.findElement(LogInButtonClickable).click();
 
     }
 
-    public String getLogedInUserName(){
-        wait.until(ExpectedConditions.textToBePresentInElementLocated(userProfileLink,"Welcome"));
+    public String getLogedInUserName() {
+        wait.until(ExpectedConditions.textToBePresentInElementLocated(userProfileLink, "Welcome"));
         return driver.findElement(userProfileLink).getText();
 
     }
+    //CatagoryMethod
 
+    public void clickNotebookCatgoryLink() {
+        driver.findElement(notebookCatgoryLink).click();
+
+    }
+
+    public void clickProductOnePageLink() {
+        driver.findElement(productOnePage).click();
+    }
+
+    public void clickProductTwoPageLink() {
+        driver.findElement(productTwoPage).click();
+    }
+    public void clickOnCartLink(){
+        driver.findElement(cartPageLink).click();
+    }
 }

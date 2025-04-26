@@ -1,0 +1,3 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","23093","Verify that Two Products Are Purchased Successfully","","Sat Apr 26 14:20:40 EEST 2025","passed","Sat Apr 26 14:21:04 EEST 2025","","Sign Up Page","Verify that Two Products Are Purchased Successfully",""
+"","12801","Verify that User Can Sign Up Successfully","","Sat Apr 26 14:20:28 EEST 2025","passed","Sat Apr 26 14:20:40 EEST 2025","","Sign Up Page","Verify that User Can Sign Up Successfully",""
