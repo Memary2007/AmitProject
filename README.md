@@ -7,6 +7,8 @@
 - **TestNG**: Testing framework for running and managing test cases.
 - **Cucumber**: Framework for Behavior-Driven Development (BDD).
 - **Allure**: Reporting tool for generating detailed test reports.
+- **Git**: Version Control Tools .
+
 
 ## Steps to Run the Tests
 
